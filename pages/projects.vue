@@ -247,7 +247,7 @@ export default {
 		span {
 			// background-image: url('~assets/svg/underline.svg');
 			display: inline-block;
-			vertical-align: middle;
+			vertical-align: baseline;
 			padding: .1em;
 			position: relative;
 			.icon {
