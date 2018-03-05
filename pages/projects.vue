@@ -289,7 +289,7 @@ export default {
 	transition: all .5s;
 	position: fixed;
 	left: 0;
-	overflow: hidden;
+	overflow: visible;
 	width: 100%;
 	top: 0;
 	opacity: 0;
