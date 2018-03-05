@@ -67,9 +67,13 @@
 		}
 		.open & {
 			// transform: translate(0,0);
-			animation-duration: 1s;
+			animation-duration: .3s;
 			animation-fill-mode: both;
-			animation-name: rubberBand;
+			animation-name: rubberBandBasic;
+			@supports (transform: scale3d(1, 1, 1)) {
+				animation-duration: .8s;
+				animation-name: rubberBand;
+			}
 			li {
 				opacity: 1;
 			}

@@ -10,41 +10,43 @@
 		</section>
 		<div class="max-container max-container--sm">
 			<div class="grid">
-				<div class="project-card" v-for="project in projects">
-					<a class="project-card__main" v-bind:title="project.name" v-bind:style="{ 'background-image': 'url(' + require('assets/img/' + project.main ) + ')' }" @click="showModal(project)">
-					</a>
-					<div class="project-card__body">
-					</div>
-				</div>
-				<div class="project-display container container--full">
-					<button @click="hideModal" class="project-display__btn"><svg class="icon"><use xlink:href="#close"></use></svg></button>
-					<div class="project-display__inner">
-						<div class="project-display__gallery">
-							<mockup :device="'desktop'" :img="require('assets/img/screen-' + label + '-2.jpg')"/>
-							<mockup class="project-display__phone" :device="'phone'" :img="require('assets/img/screen-' + label + '-1.jpg')"/>
+				<div class="grid__item"  v-for="project in projects">
+					<div class="project-card">
+						<a class="project-card__main" v-bind:title="project.name" v-bind:style="{ 'background-image': 'url(' + require('assets/img/' + project.main ) + ')' }" @click="showModal(project)">
+						</a>
+						<div class="project-card__body">
 						</div>
-						<div class="project-display__text">
-							<h3 class="project-display__title project-display__title--lg">{{title}}</h3>
-							<p class="project-display__desc" v-html ="desc"></p>
-							<h4 class="project-display__title project-display__title--sm">Tools I learned for this project:</h4>
-							<ul class="project-display__list">
-								<li v-for="item in tags">
-									<svg class="icon"><use v-bind="{'xlink:href':'#'+ item.icon}"></use></svg>
-									<span>{{item.name}}</span>
-								</li>
-							</ul>
-							<div class="project-display__btn-wrap">
-								<button
-								class="project-display__nav btn btn--default project-display__nav--prev" @click="goToProject(false)" v-on:keyup.left="goToProject(false)"
-								>
-								<svg class="icon"><use xlink:href="#navnext"></use></svg></button>
-								<button class="project-display__nav btn btn--default" @click="goToProject" v-on:keyup.right="goToProject()"
-								>
-								<svg class="icon"><use xlink:href="#navnext"></use></svg></button>
+					</div>
+					<div class="project-display container container--full">
+						<button @click="hideModal" class="project-display__btn"><svg class="icon"><use xlink:href="#close"></use></svg></button>
+						<div class="project-display__inner">
+							<div class="project-display__gallery">
+								<mockup :device="'desktop'" :img="require('assets/img/screen-' + label + '-2.jpg')"/>
+								<mockup class="project-display__phone" :device="'phone'" :img="require('assets/img/screen-' + label + '-1.jpg')"/>
+							</div>
+							<div class="project-display__text">
+								<h3 class="project-display__title project-display__title--lg">{{title}}</h3>
+								<p class="project-display__desc" v-html ="desc"></p>
+								<h4 class="project-display__title project-display__title--sm">Tools I learned for this project:</h4>
+								<ul class="project-display__list">
+									<li v-for="item in tags">
+										<svg class="icon"><use v-bind="{'xlink:href':'#'+ item.icon}"></use></svg>
+										<span>{{item.name}}</span>
+									</li>
+								</ul>
+								<div class="project-display__btn-wrap">
+									<button
+									class="project-display__nav btn btn--default project-display__nav--prev" @click="goToProject(false)" v-on:keyup.left="goToProject(false)"
+									>
+									<svg class="icon"><use xlink:href="#navnext"></use></svg></button>
+									<button class="project-display__nav btn btn--default" @click="goToProject" v-on:keyup.right="goToProject()"
+									>
+									<svg class="icon"><use xlink:href="#navnext"></use></svg></button>
+								</div>
 							</div>
 						</div>
+						<a class="project-display__cta btn btn--primary" v-bind:href="url" v-bind:title="'Link to ' + title" target="_blank"><span>Launch</span><svg class="icon"><use xlink:href="#exlink"></use></svg></a>
 					</div>
-					<a class="project-display__cta btn btn--primary" v-bind:href="url" v-bind:title="'Link to ' + title" target="_blank"><span>Launch</span><svg class="icon"><use xlink:href="#exlink"></use></svg></a>
 				</div>
 			</div>
 		</div>
@@ -72,6 +74,9 @@ export default {
 	head () {
 		return {
 			bodyAttrs: {
+				class: this.projectOpen ? 'p-open' : 'p-close'
+			},
+			htmlAttrs: {
 				class: this.projectOpen ? 'p-open' : 'p-close'
 			}
 		}
@@ -259,6 +264,9 @@ export default {
 				fill: $primary-color;
 			}
 		}
+	}
+	&__text {
+		padding: 0 .5em;
 	}
 }
 .project-card {

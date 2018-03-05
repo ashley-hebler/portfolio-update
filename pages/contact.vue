@@ -1,6 +1,6 @@
 <template>
-	<div class="contact" v-bind:class="{ 'show': tipShow, 'no-show': !tipShow }">
-		<div class="splash">
+	<div class="splash" v-bind:class="{ 'show': tipShow, 'no-show': !tipShow }">
+		<div class="contact">
 			<h1 class="splash__title">
 				Contact
 			</h1>
