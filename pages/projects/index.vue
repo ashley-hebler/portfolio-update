@@ -12,7 +12,7 @@
 			<div class="grid">
 				<div class="grid__item" v-for="project in $store.state.projects">
 					<div class="project-card">
-						<nuxt-link class="project-card__main" v-bind:title="project.name" v-bind:style="{ 'background-image': 'url(' + require('assets/img/' + project.main ) + ')' }" v-bind:to="'projects/' + project.slug">
+						<nuxt-link class="project-card__main" v-bind:title="project.name" v-bind:style="{ 'background-image': 'url(' + require('assets/img/' + project.main ) + ')' }" v-bind:to="'/projects/' + project.slug">
 						</nuxt-link>
 						<div class="project-card__body">
 						</div>
