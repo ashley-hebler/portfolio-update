@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import underline from './../../assets/svg/underline.svg'
 export default {
 	scrollToTop: true
 }

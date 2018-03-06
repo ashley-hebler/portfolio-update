@@ -47,7 +47,6 @@ import heroku from './../../assets/svg/heroku.svg'
 import exlink from './../../assets/svg/exlink.svg'
 import canvas from './../../assets/svg/canvas.svg'
 import share from './../../assets/svg/share.svg'
-import underline from './../../assets/svg/underline.svg'
 import wordpress from './../../assets/svg/wordpress.svg'
 import netlify from './../../assets/svg/netlify.svg'
 import bitbucket from './../../assets/svg/bitbucket.svg'
@@ -70,6 +69,12 @@ export default {
 				label: 'rc',
 			}
 		}
+	},
+	created () {
+		// temp fix https://github.com/nuxt/nuxt.js/issues/2738
+		// if (process.browser) {
+		// 	window.scrollTo(0, 0);
+		// }
 	},
 	computed: {
 		projects () { return this.$store.state.projects }

@@ -65,11 +65,6 @@ module.exports = {
     '~plugins/vue-clipboard2',
     { src: '~/plugins/vue-analytics', ssr: false }
   ],
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  },
   generate: {
     fallback: true
   }
