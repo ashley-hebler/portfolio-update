@@ -70,12 +70,14 @@
 			animation-duration: .3s;
 			animation-fill-mode: both;
 			animation-name: rubberBandBasic;
-			@supports (transform: scale3d(1, 1, 1)) {
-				animation-duration: .8s;
-				animation-name: rubberBand;
-			}
 			li {
 				opacity: 1;
+			}
+			@include respond-to(md-and-up) {
+				@supports (transform: scale3d(1, 1, 1)) {
+					animation-duration: .8s;
+					animation-name: rubberBand;
+				}
 			}
 		}
 		&:after {
@@ -87,6 +89,7 @@
 			position: absolute;
 			right: -($nav-size/2);
 			top: -($nav-size/2);
+			box-shadow: 0 0.1em .5em 0 rgba(0, 0, 0, 0.2);
 		}
 	}
 	&__icon-wrap {
