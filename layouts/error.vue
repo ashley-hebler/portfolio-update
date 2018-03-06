@@ -27,7 +27,7 @@ export default {
     Worker,
     Logo
   },
-  layout: 'error-layout'
+  layout: 'blank-layout'
 }
 </script>
 

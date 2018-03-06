@@ -27,7 +27,6 @@
 @import '~assets/scss/_variables.scss';
 .site-footer {
 	padding: 2em 0;
-	margin-top: 2em;
 	border-top: $border-base solid $gray;
 	background-color: $gray;
 	&__link {

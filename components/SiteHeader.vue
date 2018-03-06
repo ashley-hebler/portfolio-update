@@ -24,6 +24,8 @@
 	text-align: left;
 	padding: 2em 1em;
 	background-color: $secondary-color;
+	position: relative;
+	z-index: 1;
 	&--home {
 		position: absolute;
 		top: 0;
