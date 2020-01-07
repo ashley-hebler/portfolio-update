@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "nuxt": "^1.0.0",
-    "vue-analytics": "^5.9.1",
+    "vue-analytics": "^5.21.1",
     "vue-clipboard2": "^0.0.9"
   },
   "devDependencies": {
