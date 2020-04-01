@@ -14,7 +14,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "nuxt": "^1.0.0",
+    "nuxt": "^2.12.2",
     "vue-analytics": "^5.9.1",
     "vue-clipboard2": "^0.0.9"
   },
